@@ -1,6 +1,7 @@
 import React from 'react';
 import Appointment from './Appointment';
 import Banner from './Banner';
+import Footer from './Footer';
 import Info from './Info';
 import Services from './Services';
 import StayConnected from './StayConnected';
@@ -17,6 +18,7 @@ const Home = () => {
             <Appointment/>
             <Testimonials/>
             <StayConnected/>
+            <Footer/>
         </div>
     );
 };
