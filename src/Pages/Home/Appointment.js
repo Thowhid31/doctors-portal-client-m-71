@@ -7,7 +7,7 @@ const Appointment = () => {
     return (
         <section style={{
             background: `url(${doctorsBg})`
-        }} className='flex justify-center items-center mt-12'>
+        }} className='flex justify-center items-center my-28'>
             <div className='flex-1 hidden lg:block'>
                 <img className='mt-[-150px]' src={doctor} alt="" />
             </div>
