@@ -1,7 +1,7 @@
 import React from 'react';
+import Footer from '../Shared/Footer';
 import Appointment from './Appointment';
 import Banner from './Banner';
-import Footer from './Footer';
 import Info from './Info';
 import Services from './Services';
 import StayConnected from './StayConnected';
@@ -10,7 +10,7 @@ import Treatment from './Treatment';
 
 const Home = () => {
     return (
-        <div className='px-12'>
+        <div>
             <Banner/>
             <Info/>
             <Services/>
