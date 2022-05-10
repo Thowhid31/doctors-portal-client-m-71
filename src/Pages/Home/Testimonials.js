@@ -11,18 +11,21 @@ const Testimonials = () => {
             _id: 1,
             name: 'Winson Herry',
             review: 'It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content',
+            location: 'Japan',
             img: people1
         },
         {
             _id: 2,
-            name: 'Winson Herry',
+            name: 'KetKeti Banu',
             review: 'It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content',
+            location: 'Japan',
             img: people2
         },
         {
             _id: 3,
-            name: 'Winson Herry',
+            name: 'Hiramon Kanti',
             review: 'It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content',
+            location: 'Japan',
             img: people3
         }
     ]
@@ -37,7 +40,7 @@ const Testimonials = () => {
                     <img src={quote} className='w-24 lg:w-48' alt="" />
                 </div>
             </div>
-            <div>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
                     reviews.map(review => <Review
                     key={review._id}
