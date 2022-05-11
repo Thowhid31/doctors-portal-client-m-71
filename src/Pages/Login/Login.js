@@ -4,6 +4,10 @@ import auth from '../../firebase.init';
 
 const Login = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+
+    if(user){
+        console.log(user);
+    }
     return (
         <div className='flex h-screen justify-center items-center'>
             <div class="card w-96 bg-base-100 shadow-xl">
@@ -12,7 +16,9 @@ const Login = () => {
                     
 
                     <div class="divider">OR</div>
-                    <button class="btn btn-outline">Continue with Google</button>
+                    <button 
+                    onClick={()=> signInWithGoogle()}
+                    class="btn btn-outline">Continue with Google</button>
                     
                 </div>
             </div>
