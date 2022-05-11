@@ -44,16 +44,30 @@ const Login = () => {
                             </label>
                         </div>
 
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                                <span class="label-text">Password</span>
+                            </label>
+                            <input type="password" placeholder="Your Password Here" class="input input-bordered w-full max-w-xs"
+                            {...register("password", {
+                                required: {
+                                    value: true,
+                                    message: 'Password is Required'
+                                },
+                                minLength: 6,
+                                message: 'Must be 6 character or longer'
+                            })}
+                            
+                            />
+                            <label class="label">
+                            {errors.password?.type === 'required' && <span class="label-text-alt text-red-600" >{errors.password.message}</span>}
 
+                            {errors.email?.type === 'password' && <span class="label-text-alt text-red-600" >{errors.password.message}</span>}
+                                
+                            </label>
+                        </div>
 
-
-                        <input />
-                        {errors.firstName?.type === 'required' && "First name is required"}
-
-                        <input {...register("lastName", { required: true })} />
-                        {errors.lastName && "Last name is required"}
-
-                        <input type="submit" />
+                        <input className='btn w-full max-w-xs' value='login' type="submit" />
                     </form>
                     <div class="divider">OR</div>
                     <button
