@@ -4,9 +4,9 @@ import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 
 const Login = () => {
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, user] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
-    
+
     const onSubmit = data => {
         console.log(data);
     }
@@ -21,7 +21,26 @@ const Login = () => {
                     <h2 class="text-center text-2xl font-bold">Login</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <input {...register("firstName", { required: true })} />
+                        <div class="form-control w-full max-w-xs">
+                            <label class="label">
+                                <span class="label-text">Email</span>
+                            </label>
+                            <input type="email" placeholder="Your Email Here" class="input input-bordered w-full max-w-xs"
+                            {...register("email", {
+                                pattern: /[A-Za-z]{3}/,
+                                message: 'error message'
+                            })}
+                            
+                            />
+                            <label class="label">
+                                <span class="label-text-alt" >Alt label</span>
+                            </label>
+                        </div>
+
+
+
+
+                        <input />
                         {errors.firstName?.type === 'required' && "First name is required"}
 
                         <input {...register("lastName", { required: true })} />
