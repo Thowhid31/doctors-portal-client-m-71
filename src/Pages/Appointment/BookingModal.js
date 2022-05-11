@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BookingModal = ({treatment}) => {
-    const [name, slots] = treatment;
+    const {name, slots} = treatment;
     return (
         <div>
             <input type="checkbox" id="booking-modal" class="modal-toggle" />
