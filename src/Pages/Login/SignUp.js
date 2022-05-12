@@ -45,16 +45,16 @@ const SignUp = () => {
 
     return (
         <div className='flex h-screen justify-center items-center'>
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <div class="card-body">
-                    <h2 class="text-center text-2xl font-bold">Sign Up</h2>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="text-center text-2xl font-bold">Sign Up</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Name</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Name</span>
                             </label>
-                            <input type="text" placeholder="Your Name Here" class="input input-bordered w-full max-w-xs"
+                            <input type="text" placeholder="Your Name Here" className="input input-bordered w-full max-w-xs"
                                 {...register("name", {
                                     required: {
                                         value: true,
@@ -63,15 +63,15 @@ const SignUp = () => {
                                 })}
 
                             />
-                            <label class="label">
-                                {errors.name?.type === 'required' && <span class="label-text-alt text-red-600" >{errors.name.message}</span>}
+                            <label className="label">
+                                {errors.name?.type === 'required' && <span className="label-text-alt text-red-600" >{errors.name.message}</span>}
                               </label>
                         </div>
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Email</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="Your Email Here" class="input input-bordered w-full max-w-xs"
+                            <input type="email" placeholder="Your Email Here" className="input input-bordered w-full max-w-xs"
                                 {...register("email", {
                                     required: {
                                         value: true,
@@ -82,19 +82,19 @@ const SignUp = () => {
                                 })}
 
                             />
-                            <label class="label">
-                                {errors.email?.type === 'required' && <span class="label-text-alt text-red-600" >{errors.email.message}</span>}
+                            <label className="label">
+                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-600" >{errors.email.message}</span>}
 
-                                {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-600" >{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-600" >{errors.email.message}</span>}
 
                             </label>
                         </div>
 
-                        <div class="form-control w-full max-w-xs">
-                            <label class="label">
-                                <span class="label-text">Password</span>
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label">
+                                <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="Your Password Here" class="input input-bordered w-full max-w-xs"
+                            <input type="password" placeholder="Your Password Here" className="input input-bordered w-full max-w-xs"
                                 {...register("password", {
                                     required: {
                                         value: true,
@@ -105,10 +105,10 @@ const SignUp = () => {
                                 })}
 
                             />
-                            <label class="label">
-                                {errors.password?.type === 'required' && <span class="label-text-alt text-red-600" >{errors.password.message}</span>}
+                            <label className="label">
+                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-600" >{errors.password.message}</span>}
 
-                                {errors.email?.type === 'password' && <span class="label-text-alt text-red-600" >{errors.password.message}</span>}
+                                {errors.email?.type === 'password' && <span className="label-text-alt text-red-600" >{errors.password.message}</span>}
 
                             </label>
                         </div>
@@ -118,10 +118,10 @@ const SignUp = () => {
                         <input className='btn w-full max-w-xs' value='Sign Up' type="submit" />
                     </form>
                     <small className='text-center'>Already in Doctors Portal? <Link to='/login' className='text-secondary'>Login</Link></small>
-                    <div class="divider">OR</div>
+                    <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
-                        class="btn btn-outline">Continue with Google</button>
+                        className="btn btn-outline">Continue with Google</button>
 
                 </div>
             </div>
