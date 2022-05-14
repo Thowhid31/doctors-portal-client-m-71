@@ -20,6 +20,34 @@ const MyAppointment = () => {
     return (
         <div>
             <h1>My Appointment: {appointments.length}</h1>
+            <div class="overflow-x-auto">
+  <table class="table w-full">
+   
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Slot</th>
+        <th>Treatment</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+          appointments.map(a =>  <tr>
+            <th>1</th>
+            <td>{a.patient}</td>
+            <td>{a.date}</td>
+            <td>{a.slot}</td>
+            <td>{a.treatment}</td>
+          </tr>)
+      }
+
+     
+      
+    </tbody>
+  </table>
+</div>
         </div>
     );
 };
