@@ -1,10 +1,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
 
 const AddDoctors = () => {
-    const { register, formState: { errors }, handleSubmit } = useForm();
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
     const imageStorageKey = 'a5113089964d5e5d5c59a49191f9efa6';
 
@@ -27,9 +28,27 @@ const AddDoctors = () => {
                     name: data.name,
                     email: data.email,
                     specialty: data.specialty,
-                    image: img
+                    image: image
                 }
                 //sent to your database
+                fetch('http://localhost:5000/doctor', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    },
+                    body: JSON.stringify(doctor)
+                })
+                .then(res => res.json())
+                .then(inserted => {
+                    if(inserted.insertedId){
+                        toast.success('Doctor added successfully')
+                        reset()
+                    }
+                    else{
+                        toast.error('Failed to add Doctor')
+                    }
+                })
             }
             console.log('image bb', result);
         })
