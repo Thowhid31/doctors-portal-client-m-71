@@ -6,10 +6,33 @@ import Loading from '../Shared/Loading';
 const AddDoctors = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
 
+    const imageStorageKey = 'a5113089964d5e5d5c59a49191f9efa6';
+
     const { data: services, isLoading } = useQuery('services', () => fetch(`http://localhost:5000/service`).then(res => res.json()))
 
     const onSubmit = async data => {
-        console.log(data);
+        const image = data.image[0];
+        const formData = new FormData();
+        formData.append('image', image);
+        const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+        .then(res => res.json())
+        .then(result=> {
+            if(result.success){
+                const image = result.data.url;
+                const doctor = {
+                    name: data.name,
+                    email: data.email,
+                    specialty: data.specialty,
+                    image: img
+                }
+                //sent to your database
+            }
+            console.log('image bb', result);
+        })
     }
 
     if (isLoading) {
