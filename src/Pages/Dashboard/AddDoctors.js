@@ -9,7 +9,7 @@ const AddDoctors = () => {
 
     const imageStorageKey = 'a5113089964d5e5d5c59a49191f9efa6';
 
-    const { data: services, isLoading } = useQuery('services', () => fetch(`http://localhost:5000/service`).then(res => res.json()))
+    const { data: services, isLoading } = useQuery('services', () => fetch(`https://dry-everglades-70215.herokuapp.com/service`).then(res => res.json()))
 
     const onSubmit = async data => {
         const image = data.image[0];
@@ -31,7 +31,7 @@ const AddDoctors = () => {
                     image: image
                 }
                 //sent to your database
-                fetch('http://localhost:5000/doctor', {
+                fetch('https://dry-everglades-70215.herokuapp.com/doctor', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',

@@ -6,7 +6,7 @@ import DocRow from './DocRow';
 
 const ManageDoc = () => {
     const [deletingDoctor, setDeletingDoctor] = useState(null)
-    const { data: doctors, isLoading, refetch } = useQuery('doctors', () => fetch('http://localhost:5000/doctor', {
+    const { data: doctors, isLoading, refetch } = useQuery('doctors', () => fetch('https://dry-everglades-70215.herokuapp.com/doctor', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
