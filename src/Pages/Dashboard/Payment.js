@@ -38,7 +38,7 @@ const Payment = () => {
 
                     
                     <Elements stripe={stripePromise}>
-                        <CheckoutForm />
+                        <CheckoutForm appointment={appointment} />
                     </Elements>
                   
                 </div>
